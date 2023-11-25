@@ -1,0 +1,394 @@
+.addTaskButton {
+    padding: 0px 15px;
+    height: 30px;
+    background: #645fc4;
+    border: 0;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0px 0 20px 0;
+}
+
+.addTaskButton:hover {
+    background: #6964c5;
+}
+.toDoSection {
+    .topBar {
+        width: 100%;
+        height: 60px;
+        background: #2c2c38;
+        position: relative;
+
+        h3 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 12px;
+        }
+
+        .addTask {
+            position: absolute;
+            right: 10px;
+            top: 15px;
+
+          
+        }
+    }
+
+    .toDoContainer {
+        width: calc(100% - 20px);
+        height: calc(100vh - 80px);
+        background: #21212d;
+        padding: 10px;
+
+        ::-webkit-scrollbar {
+            width: 4px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #21212d;
+            cursor: pointer;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #2c2c38;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3d3d55;
+            cursor: pointer;
+
+        }
+    }
+
+    .toDoColumns {
+        display: flex;
+        width: 100%;
+        //     max-width: calc(100vw - 250px);
+        overflow: auto;
+
+    }
+
+    .toDoColumn {
+        display: grid;
+        height: 100%;
+        width: 230px;
+        min-width: 230px;
+        gap: 10px;
+        padding: 10px;
+        /* width */
+
+
+        .columnHeader {
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5647058824);
+            font-size: 11px;
+            letter-spacing: 2px;
+            display: flex;
+            font-weight: 500;
+            gap: 10px;
+            align-items: center;
+            height: 25px;
+
+            .coloredPoint {
+                position: relative;
+                display: block;
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                background: rgb(random(255), random(255), random(255));
+            }
+        }
+
+        .columnBoxs {
+            gap: 10px;
+            display: grid;
+            max-height: calc(100vh - 150px);
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                width: 0 !important;
+            }
+
+            .columnBox {
+                min-height: 50px;
+                padding: 16px 15px 8px 15px;
+                width: calc(100% - 30px);
+                background: #2c2c38;
+                color: #fff;
+                border-radius: 8px;
+
+
+                h5 {
+                    font-size: 12px;
+                }
+
+                span {
+                    font-size: 8px;
+                }
+            }
+        }
+    }
+}
+
+.statusColumns{
+    display: grid;
+    grid-template-columns: 90% 1fr;
+    gap: 8px;
+    width: 100%;
+    i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    input,
+    input:focus,
+    input:focus-visible,
+    input:focus-within,
+    input:hover {
+        padding: 5px;
+        background: #00000000;
+        border: 2px solid #343440;
+        border-radius: 5px;
+        color: #fff;
+        outline: none;
+    }
+}
+
+////////////////
+
+@keyframes animated3 {
+
+    0% {
+        height: 200%;
+        opacity: 0;
+    }
+
+    100% {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+.taskSectionPopup {
+    position: fixed;
+    width: 100%;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    background: #00000010;
+    height: 100%;
+    animation: animated3 0.4s ease;
+    overflow: hidden;
+    transition: 0.4s;
+    $border-radius: 8px;
+
+    .taskSectionExit {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #00000060;
+    }
+
+    .taskSection {
+        width: 100%;
+        padding: 0%;
+        margin: auto;
+        overflow: auto;
+        position: relative;
+        display: block;
+        height: calc(100% - 88px);
+        background: #2c2c38;
+ @media (max-width:500px) {
+    height: 100%;
+ }
+.taskInfoSectionTitle{
+    padding: 20px 0 0 0; 
+   min-height: 70px;
+   i {
+    position: absolute;
+    right: 0;
+    top:0;
+}
+}
+
+        .taskSectionTitle,.taskInfoSectionTitle {
+            color: #fff;
+            position: relative;
+            display: grid;
+            height: 70px;
+            grid-template-columns: 1fr 75px;
+            align-items: center;
+            justify-content: space-between;
+
+            h1 {
+                font-size: 16px;
+                padding-left: 20px;
+            }
+
+            i {
+                font-size: 26px;
+                width: 75px;
+                height: 100%;
+                align-items: center;
+                display: grid;
+                cursor: pointer;
+                justify-content: center;
+            }
+        }
+
+
+    }
+
+    .form {
+        padding: 0 50px;
+        display: grid;
+        gap: 12px;
+
+        .form-field {
+            display: grid;
+            gap: 8px;
+            color: #fff;
+
+            label {}
+
+            .subTask {
+                .addSubtaskButton{
+                    width: 100%;
+                    border-radius: 20px;
+                    height: 34px;
+                    border: 0;
+                    background-color: #ffffff;
+                    color: #645fc4;
+                    margin: 10px 0;
+                }
+                .subTaskForm {
+                    display: grid;
+                    grid-template-columns: 90% 1fr;
+                    margin: 0px 0 10px 0;
+                    i {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 22px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            input, select {
+                padding: 10px;
+                background: #00000000;
+                border: 2px solid #343440;
+                border-radius: 5px;
+                color: #fff;
+            }
+            option {
+                background-color: #2c2c38;
+                font-size: 14px;
+              }
+            textarea {
+                min-height: 100px;
+                padding: 10px;
+                background: #00000000;
+                border: 2px solid #343440;
+                border-radius: 5px;
+                color: #fff;
+            }
+
+            input:focus,
+            input:focus-visible,
+            input:focus-within,
+            input:hover,
+            textarea:focus,
+            textarea:focus-visible,
+            textarea:focus-within,
+            textarea:hover 
+            select:focus,
+            select:focus-visible,
+            select:focus-within,
+                select:hover {
+                background: #00000000;
+                border: 2px solid #343440;
+                outline: none;
+            }
+
+            input::placeholder {
+                color: #7f7f86;
+            }
+
+            textarea::placeholder {
+                color: #7f7f86;
+            }
+        }
+    }
+
+    @media(min-width:992px) {
+        .taskSection {
+            width: 30%;
+            overflow: auto;
+            position: fixed;
+            display: block;
+            height: 75vh;
+            bottom: 100px;
+            border-radius: 11px;
+            right: 35%;
+            // background: #fff;
+        }
+    }
+
+    @media(min-width:592px) {
+        .taskSection {
+            min-width: 500px;
+        }
+    }
+}
+
+
+  input[type=checkbox]{
+    accent-color: #625cb8;  
+    cursor: pointer;
+    }
+p{
+    color: #fff;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+    color: #fff;
+   
+      
+    li{
+        display: grid;
+        grid-template-columns: 43px 1fr;
+        height: 43px;
+        align-items: center;
+        gap: 10px;
+        background: #21212d;
+        .subTaskStatus{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.addColumnButton{
+    background: #24242e;
+    color: #fff;
+    font-size: 20px;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}

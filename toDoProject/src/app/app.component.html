@@ -1,0 +1,19 @@
+<div id="wrapper">
+  <aside id="sidebar-wrapper">
+      <div class="sidebar-title">
+        <span>ALL BOARDS</span>
+      </div>
+    <ul class="sidebar-nav">
+      <li routerLinkActive="active"  [routerLink]="['/toDoPage']">
+        <a><i class="sidnav-icon fa-solid fa-user-tie"></i><span>Platform Launch</span></a>
+      </li>
+      <li routerLinkActive="active" >
+        <a><i class="sidnav-icon fa fa-list-ul"></i><span>Marketing Plan</span></a>
+      </li>
+     
+    </ul>
+  </aside>
+  <section >
+    <router-outlet></router-outlet>
+  </section>
+</div>
